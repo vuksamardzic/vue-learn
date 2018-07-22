@@ -20,6 +20,7 @@
                 :key="key">{{ i }}
             </li>
           </ul>
+          <p>{{ title }}</p>
           <div class="row">
             <div class="col-12">
               <button class="btn btn-primary"
@@ -42,6 +43,7 @@
     data() {
       return {
         mainTitle: 'vue.js',
+        author: 'vuk',
         desc: 'vue.js logo',
         details: [
           'fast',
@@ -51,6 +53,11 @@
         overKey: undefined,
         stars: 0
       };
+    },
+    computed: {
+      title() {
+        return `${this.author} is learning ${this.mainTitle}.`;
+      }
     },
     methods: {
       onStarIncrement() {
